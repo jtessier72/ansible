@@ -6,33 +6,10 @@
     cache_valid_time: 300
 
 - name: install packages
-  apt: pkg={{ item }} state=present
-  with_items:
-    - bash-completion
-    - curl
-    - exiftool
-    - fuse
-    - glances
-    - git
-    - htop
-    - iftop
-    - iotop
-    - jq
-    - lynx
-    - mc
-    - ncdu
-    - nmap
-    - openssh-server
-    - python
-    - reptyr
-    - screen
-    - smartmontools
-    - sudo
-    - tmux
-    - tree
-    - wget
-    - xfsprogs
-    - youtube-dl
+  apt: 
+    name: ['bash-completion','curl', 'exiftool', 'fuse', 'glances', 'git', 'htop', 'iftop', 'iotop', 'jq','lynx', 'mc', 'ncdu', 'nmap', 'openssh-server', 'python', 'reptyr', 'screen','smartmontools', 'sudo', 'tmux', 'tree', 'wget', 'xfsprogs', 'youtube-dl'] 
+    state: present
+    update_cache: yes
   tags:
     - packages
 
