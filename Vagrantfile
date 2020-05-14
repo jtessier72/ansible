@@ -31,6 +31,7 @@ Vagrant.configure(2) do |config|
    config.vm.provision :ansible do |ansible|
      ansible.verbose = "vvv"
 #     ansible.extra_vars = { "ansible_python_interpreter" => "/usr/bin/python2" }
+     ansible.extra_vars = { "ansible_python_interpreter" => "/usr/bin/python3" }
      ansible.playbook = "main.yml"
    end
 end
