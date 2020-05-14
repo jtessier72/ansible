@@ -3,10 +3,11 @@
 # the binary | this.file | -i targets | *optional --tags | -K asks for sudo pass
 
 - hosts: all
-  sudo: true
+  #sudo: true
+  become: yes
 
   roles:
     - docker
-    - mergerfs
-    - snapraid
+    #- mergerfs
+    #- snapraid
     - epsilon

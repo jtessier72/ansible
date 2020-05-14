@@ -21,7 +21,8 @@
 
 - name: install (or update) docker package
   apt:
-    name: "docker-engine"
+    #name: "docker-engine"
+    name: "docker-ce"
     state: "{{ 'latest' if update_docker_package else 'present' }}"
     update_cache: yes
   notify:
