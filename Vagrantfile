@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
      Drives = [2,3,4,5]
      Drives.each do |hd|
 
-       path_to_disk = "/tmp/disk#{hd}.vdi"
+       path_to_disk = "tmp/disk#{hd}.vdi"
        unless File.exist?(path_to_disk)
          v.customize ['createhd', '--filename', path_to_disk,'--variant', 'Fixed', '--size', 5 * 1024]
          v.customize ['storageattach', :id,  '--storagectl', 'SCSI', '--port', hd, '--device', 0, '--type', 'hdd', '--medium', path_to_disk]
