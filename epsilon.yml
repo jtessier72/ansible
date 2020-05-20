@@ -1,7 +1,8 @@
 # ansible-playbook main.yml -i hosts --tags docker_apps
 ---
 - hosts: epsilon
-  sudo: true
+  become: yes
+  become_method: sudo
   roles:
     - docker
     - docker-compose
